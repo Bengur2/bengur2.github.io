@@ -10,12 +10,6 @@
     --ffheaders: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    * {
-      color: var(--white);
-      background-color: var(--dark);
-    }
-  }
 
 h1,h2 {
     font-family: var(--ff);
@@ -172,3 +166,18 @@ footer {
     filter: grayscale(0%);
     transition: 0.5s;
 }
+
+.galerie a {
+    font-size: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+      color: var(--white);
+      background-color: var(--dark);
+    }
+
+    section {
+        color: var(--notblack);
+    }
+  }
