@@ -20,17 +20,34 @@ p {
     font-size: 2em;
 }
 
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
 body {
     background-color: var(--white);
 }
 
 header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
     background-color: var(--notblack);
+    color: var(--white);
     min-height: 5vh;
     min-height: 5svh;
     position: sticky;
     top: 0;
     z-index: 1;
+    padding-right: 10px;
+}
+
+@media (max-width: 1100px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .hero-image {
@@ -49,7 +66,7 @@ header {
     filter: drop-shadow(10px 5px 8px grey);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .logo {
         max-width: 100%;
     }
@@ -59,10 +76,11 @@ header {
     display: flex;
     max-width: 70%;
     margin: auto;
+    padding: 50px 0;
     justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .container-main {
         max-width: 100%;
         padding: 20px 20px 0 20px;
@@ -76,13 +94,13 @@ header {
     gap: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .container-section {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     section {
         display: flex;
         flex-direction: column;
@@ -90,7 +108,8 @@ header {
 }
 
 section {
-    background-color: var(--beige);
+    background: linear-gradient(var(--beige), var(--white), var(--beige));
+    box-shadow: var(--notblack) 5px 5px 4px;
 }
 
 section h2, section p {
@@ -98,14 +117,13 @@ section h2, section p {
 }
 
 section img {
-    background-color: var(--white);
     padding: 20px 0;
     aspect-ratio: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     section img {
-        max-width: 50%;
+        max-width: 100%;
         margin: auto;
 
     }
@@ -114,4 +132,36 @@ section img {
 footer {
     min-height: 100px;
     background-color: var(--notblack);
+    color: var(--white);
+}
+
+.galerie-nadpis {
+    text-align: center;
+}
+
+.galerie {
+    min-height: 90vh;
+    min-height: 90svh;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.galerie-container {
+    display: flex;
+    text-align: center;
+    min-height: 90vh;
+    min-height: 90svh;
+}
+
+.galerie-item {
+
+}
+
+.galerie-item img {
+    filter: grayscale(100%);
+}
+
+.galerie-item img:hover {
+    filter: grayscale(0%);
+    transition: 0.5s;
 }
