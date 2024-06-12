@@ -156,6 +156,9 @@ footer {
     grid-template-columns: 1fr 1fr;
 }
 
+
+
+
 .galerie-nadpis {
     display: grid;
     text-align: center;
@@ -186,7 +189,8 @@ footer {
 
 .galerie-item img {
     filter: grayscale(100%);
-    max-width: 300px;
+    max-width: 50vw;
+    max-width: 50svw;
     justify-self: center;
 }
 
@@ -196,10 +200,7 @@ footer {
 }
 
 .galerie-item a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 2em;
+    display: inline-block;
 }
 
 @media (prefers-color-scheme: dark) {
