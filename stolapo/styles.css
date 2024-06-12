@@ -6,49 +6,57 @@
     --notblack: #0b1215;
     --beige: #E6C9AD;
 
-    --ff: "Poppins", sans-serif; 
-    --ffheaders: "Inter", sans-serif;
+    --ffheaders: "Poppins", sans-serif; 
+    --ff: "Inter", sans-serif;
 }
 
 
 h1,h2 {
-    font-family: var(--ff);
-    font-size: 2em;
+    font-family: var(--ffheaders);
+    font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
 p {
-    font-family: var(--ffheaders);
-    font-size: 2em;
+    font-family: var(--ff);
+    font-size: clamp(2rem, 2.5vw, 3rem);
 }
 
 a {
     color: var(--white);
     text-decoration: none;
+    font-family: var(--ffheaders);
 }
+
+nav a {
+    font-size: clamp(1.2rem, 2.5vw, 4rem);
+}
+
+nav a:hover {
+    background-color: #d6ae7b;
+    color: var(--notblack);
+}
+
+hr {
+    border-top: solid black 1px;
+}
+
 
 body {
     background-color: var(--white);
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: end;
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--notblack);
     color: var(--white);
-    min-height: 5vh;
-    min-height: 5svh;
+    min-height: 10vh;
+    min-height: 10svh;
     position: sticky;
     top: 0;
     z-index: 1;
-    padding-right: 10px;
-}
-
-@media (max-width: 1100px) {
-    nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+    align-content: center;
+    text-align: center;
 }
 
 .hero-image {
@@ -57,7 +65,6 @@ header {
     background-size: cover;
     min-height: 90vh;
     min-height: 90svh;
-
 }
 
 .logo {
@@ -73,6 +80,10 @@ header {
     }
 }
 
+.pozadi {
+    background-image: linear-gradient(to top, #d6ae7b, #eacda3);
+}
+
 .container-main {
     display: flex;
     max-width: 70%;
@@ -84,42 +95,46 @@ header {
 @media (max-width: 1100px) {
     .container-main {
         max-width: 100%;
-        padding: 20px 20px 0 20px;
+        padding: 50px 10px;
     }
 }
 
-.container-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 20px;
-    gap: 20px;
+.container-main P {
+    padding-bottom: 50px;
 }
 
-@media (max-width: 1100px) {
-    .container-section {
+.container-section {
+    padding: 50px 0;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    section {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 1100px) {
-    section {
-        display: flex;
-        flex-direction: column;
-    }
+section div {
+    align-content: center;
+    padding: 0 10px 0 10px;
+
 }
 
-section {
-    background: linear-gradient(var(--beige), var(--white), var(--beige));
-    box-shadow: var(--notblack) 5px 5px 4px;
-}
-
-section h2, section p {
-    padding: 10px;
+section div:nth-child(odd) {
+    text-align: end;
 }
 
 section img {
-    padding: 20px 0;
+    max-width: 50%;
+    padding: 20px 10px;
     aspect-ratio: 1;
+    filter: drop-shadow(10px 10px 7px grey);
+    justify-self: center;
 }
 
 @media (max-width: 1100px) {
@@ -134,10 +149,18 @@ footer {
     min-height: 100px;
     background-color: var(--notblack);
     color: var(--white);
+    padding: 25px 10px;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .galerie-nadpis {
+    display: grid;
     text-align: center;
+    padding: 30px 0;
+    justify-content: center;
 }
 
 .galerie {
@@ -149,17 +172,22 @@ footer {
 
 .galerie-container {
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
+    justify-content: center;
     min-height: 90vh;
     min-height: 90svh;
 }
 
 .galerie-item {
-
+    padding: 20px;
+    justify-content: center;
 }
 
 .galerie-item img {
     filter: grayscale(100%);
+    max-width: 300px;
+    justify-self: center;
 }
 
 .galerie-item img:hover {
@@ -167,17 +195,16 @@ footer {
     transition: 0.5s;
 }
 
-.galerie a {
+.galerie-item a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 2em;
 }
 
 @media (prefers-color-scheme: dark) {
     body {
-      color: var(--white);
+      color: var(--notblack);
       background-color: var(--dark);
-    }
-
-    section {
-        color: var(--notblack);
     }
   }
