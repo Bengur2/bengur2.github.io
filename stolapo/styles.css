@@ -1,7 +1,5 @@
 :root {
     --dark: #393e46;
-    --darkred: #3d0000;
-    --brick: #950101;
     --white: #F8F8FF;
     --notblack: #0b1215;
     --beige: #E6C9AD;
@@ -65,14 +63,13 @@ nav {
     background-size: cover;
     min-height: 85vh;
     min-height: 85svh;
-    max-height: 85vh;
-    max-height: 85svh;
+
 }
 
 .logo {
     padding: 10px;
     margin: auto;
-    max-width: 70%;
+    max-width: 60%;
     filter: drop-shadow(10px 5px 8px grey);
 }
 
@@ -101,12 +98,8 @@ nav {
     }
 }
 
-.container-main P {
+.container-main p {
     padding-bottom: 50px;
-}
-
-.container-section {
-    
 }
 
 section {
@@ -129,13 +122,12 @@ section div {
 section:last-child {
     padding-bottom: 50px;
 }
-
 section div:nth-child(odd) {
     text-align: end;
 }
 
 @media (max-width: 600px) {
-section div:nth-child(odd) {
+section div h2, section div p {
     text-align: start;
     }
 }
@@ -145,7 +137,7 @@ section img {
     padding: 20px 10px;
     aspect-ratio: 1;
     filter: drop-shadow(10px 10px 7px grey);
-    justify-self: center;
+    justify-self: left;
 }
 
 @media (max-width: 1100px) {
@@ -172,9 +164,6 @@ font-size: clamp(1.2rem, 2.5vw, 4rem);
 
 }
 
-
-
-
 .galerie-nadpis {
     display: grid;
     text-align: center;
@@ -190,7 +179,7 @@ font-size: clamp(1.5rem, 2.5vw, 4rem);
 .galerie {
     min-height: 90vh;
     min-height: 90svh;
-    padding: 40px;
+    padding: 50px 10px 50px 10px;
     text-align: center;
     background-image: linear-gradient(to top, #d6ae7b, #eacda3);
 }
@@ -202,6 +191,7 @@ font-size: clamp(1.5rem, 2.5vw, 4rem);
 
 .galerie-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
@@ -247,3 +237,8 @@ font-size: clamp(1.5rem, 2.5vw, 4rem);
       background-color: var(--dark);
     }
   }
+
+section div p {
+    text-align: right;
+    justify-self: end;
+}
