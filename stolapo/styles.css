@@ -250,7 +250,7 @@ font-size: clamp(1.5rem, 2.5vw, 4rem);
     transition: 0.5s;
 }
 
-.galerie-item h1 {
+.galerie-item h2 {
     font-size: clamp(1.2rem, 2.5vw, 3rem);
 }
 
